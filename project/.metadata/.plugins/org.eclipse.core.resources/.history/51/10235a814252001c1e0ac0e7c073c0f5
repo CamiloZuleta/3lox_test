@@ -1,0 +1,56 @@
+<?page title="Auto Generated index.zul"?>
+	private Textbox namePlayer1;
+	private Textbox namePlayer2;
+	private Intbox numbSqrts;
+	private Div board;
+	private Div player1Info;
+	private Div player2Info;
+	
+	
+	@Override
+	public void doAfterCompose(Component comp) throws Exception{
+		super.doAfterCompose(comp);
+	}
+
+	public void onClick$formButton(){
+		if(namePlayer1.getValue().length()>1 && namePlayer2.getValue().length()>1 && numbSqrts.getValue() >1 && numbSqrts.getValue()<100){
+			String name1 = namePlayer1.getValue();
+			String name2 = namePlayer2.getValue();
+			int n = numbSqrts.getValue();
+			System.out.println(name1);
+			System.out.println(name2);
+			System.out.println(n);
+			
+			Label lbl;
+			lbl = new Label();
+			lbl.setValue(name1);
+			lbl.setSclass("name-style ns1");
+			lbl.setParent(player1Info);
+			
+			Label lbl2;
+			lbl2 = new Label();
+			lbl2.setValue(name2);
+			lbl2.setSclass("name-style ns2");
+			lbl2.setParent(player2Info);
+			
+			int j=1;
+			int k =1;
+			for(int i=1; i<=n*n; i++){
+				j = (int) Math.ceil((float)i/(float)n);
+				k = i-n*(j-1);
+				System.out.println("r"+k+"-"+"c"+j);
+				Div item;
+				item = new Div();
+				item.setClass("square-board");
+				item.setId("r"+k+"c"+j);
+				item.setParent(board);
+			}
+			
+			Executions.sendRedirect("/gameBoard.zul");
+		}else{
+			alert("parametros invalidos,\n"
+					+ "los nombre de los jugadores deben tener al menos 2 letras\n"
+					+" El número de casillas debe ser mayor a uno y menor a 100 ");
+		}
+		
+	}

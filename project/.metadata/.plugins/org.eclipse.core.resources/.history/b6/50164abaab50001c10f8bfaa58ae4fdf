@@ -1,0 +1,142 @@
+<?page title="Auto Generated index.zul"?>
+<div  style="widht:100%; height:100%;" apply="nEnLinea.IndexController">
+
+	<style>
+	*{
+		margin:0;
+		background-color:#393d46;
+		color:white;
+	}
+	.board-style{
+		display: grid;
+		grid-template-columns: 7% 31% 31% 31%;
+		grid-template-rows: 7% 31% 31% 31%;
+		margin: 0px auto;
+		width:70%;
+		height:90%;
+		margin-top: 15px;
+		padding: 10px;
+	}	
+	
+	.square-board{
+		background-color: #fcf4dd;
+		border: 1px solid black;
+	}
+	
+	.row-label{
+		color:white;
+		margin: auto;
+	}
+	
+	.column-label{
+		color:white;
+		margin: auto;
+	}
+	.title{
+		color:white;
+	}
+	.main-container{
+		display:flex;
+		flex-direction: row;
+		height:80%;
+	}
+	.players-info{
+		width:30%;
+		height:100%;
+		margin-top:5%;
+	}
+	.cards-players{
+		width:100%;
+		height:20%;
+
+	}
+	
+	.pl1, .ns1{
+		background-color: blue;
+	}
+	
+	.pl2, .ns2{
+		background-color: red;
+	}
+	
+	.card-moves{
+		width:100%;
+		height:60%;
+		background-color: white;
+	}
+	.name-style{
+		color: white;
+		font-size: 30px;
+		font-weight: bolder;
+	}
+
+	
+	@media only screen and (max-width: 680px) {
+	     .board-style{
+			width:70%;
+			height:50%;
+		}	
+		.main-container{
+			display: block;
+		}
+		.players-info{
+			height:20%;
+		}
+    }
+	
+	</style>
+	
+	<!-- 
+	CLabel = Column label
+	left = First column from left to right
+	center = Column between left and right
+	right = The last Column
+	
+	RLabel = Row label
+	r1 = first row
+	r2 = second row
+	r3 = third row
+	
+	nomenclature:
+	r1Right = It means is in the first row in the last column from left to right
+	 -->
+	  <html>
+         <h1 style="color:white; text-align:center; margin-top:10px;">Juego N en línea (Triqui)</h1>
+	</html>
+	 
+	<div sclass="main-container">
+		<div id="playersInfo" sclass="players-info">
+			<div id="player1-info" sclass="cards-players pl1">
+				<label id="name1" sclass="name-style ns1">hola1</label>
+			</div>
+			
+			<div id="moves" sclass="card-moves"></div>
+			
+			<div id="player2-info" sclass="cards-players pl2">
+				<label id="name2" sclass="name-style ns2">hola</label>
+			</div>
+		</div>
+		<div id="board" sclass="board-style">
+			<div id="rLabelCLabel"></div>
+			<div id="rLabelLeft" sclass="row-label">left</div>
+			<div id="rLabelCenter" sclass="row-label">center</div>
+			<div id="rLabelRight" sclass="row-label" onClick="System.out.println('hola')">right</div>
+			
+			<div id="r1CLabel" sclass="column-label">r1</div>
+			<div id="r1Left" sclass="square-board"></div>
+			<div id="r1Center" sclass="square-board"></div>
+			<div id="r1Right" sclass="square-board"></div>
+			
+			<div id="r2CLabel" sclass="column-label">r2</div>
+			<div id="r2Left" sclass="square-board"></div>
+			<div id="r23Center" sclass="square-board"></div>
+			<div id="r2Right" sclass="square-board"></div>
+			
+			<div id="r3CLabel" sclass="column-label">r3</div>
+			<div id="r3Left" sclass="square-board"></div>
+			<div id="r3Center" sclass="square-board"></div>
+			<div id="r3Right" sclass="square-board"></div>
+		</div>
+	</div>
+	
+</div>

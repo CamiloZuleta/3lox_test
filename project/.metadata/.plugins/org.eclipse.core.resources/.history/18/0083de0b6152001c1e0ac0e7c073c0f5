@@ -1,0 +1,176 @@
+<?page title="Auto Generated index.zul"?>
+<div  style="widht:100%; height:100%; " apply="nEnLinea.IndexController">
+	<div  style="widht:100%; height:30%;" >
+		<style>
+			.input{
+				width:100%;
+			}
+			.form{
+				width:50%;
+				margin: auto;
+				margin-top:20px;
+			}
+			.form-button{
+				background: linear-gradient(to bottom, #fefefe 0%, #393d46 100%);
+				margin-left: 33%;
+				width:30%;
+				color:white;
+			}
+
+		*{
+			margin:0;
+		}
+		.board-style{
+			display: grid;
+			grid-template-columns: 33% 33% 33%;
+			grid-template-rows: 7% 31% 31% 31%;
+			margin: 0px auto;
+			width:70%;
+			height:100%;
+			margin-top: 15px;
+			padding: 10px;
+		}	
+		
+		.square-board{
+			background-color: #fcf4dd;
+			border: 1px solid black;
+		}
+		
+		.square-board-button{
+			background-color: #fcf4dd;
+			border: 1px solid black;
+			width:100%;
+			height:100%;
+		}
+		
+		.row-label{
+			color:white;
+			margin: auto;
+		}
+		
+		.column-label{
+			color:white;
+			margin: auto;
+		}
+		.title{
+			color:white;
+		}
+		.main-container{
+			display:flex;
+			flex-direction: row;
+			height:80%;
+		}
+		.players-info{
+			width:30%;
+			height:100%;
+			margin-top:5%;
+		}
+		.cards-players{
+			width:100%;
+			height:20%;
+	
+		}
+		
+		.pl1, .ns1{
+			background-color: blue;
+		}
+		
+		.pl2, .ns2{
+			background-color: red;
+		}
+		
+		.card-moves{
+			width:100%;
+			height:40%;
+			background-color: white;
+		}
+		.name-style{
+			color: white;
+			font-size: 30px;
+			font-weight: bolder;
+		}
+		.main{
+			margin-top:50px;
+		}
+		
+		.choose{
+			width:100%;
+			height:100%;
+			background-color:grey;
+			font-size:20px;
+			text-align:center;
+		}
+		
+		.chooseBlue{
+			color:blue;
+			background-color:#F0F8FF;
+		}
+		
+		.chooseRed{
+			color:red;
+			background-color:#FFB6C1;
+		}
+		
+		@media only screen and (max-width: 680px) {
+		     .board-style{
+				width:70%;
+				height:50%;
+			}	
+			.main-container{
+				display: block;
+			}
+			.players-info{
+				height:20%;
+			}
+	    }
+		
+		</style>
+		<html>
+			<h1 style="color:#393d46; text-align:center;">Bienvenido a el juego de N en Línea</h1>
+		</html>
+		<groupbox sclass="form" >
+	    <grid >
+	        <columns>
+	            <column />
+	            <column/>
+	        </columns>
+	        <rows>
+	            <row>
+	                Nombre Jugador 1 <textbox id="namePlayer1" sclass="input" />
+	            </row>
+	            <row>
+	                Nombre Juagador 2 <textbox id="namePlayer2" sclass="input" />
+	            </row>
+	            <row>
+	                n (número de celdas) <intbox id="numbSqrts" sclass="input"  />
+	            </row>
+	        </rows> 
+	    </grid>
+	    	<button id="formButton" sclass="form-button" >Jugar</button>
+		</groupbox>
+	</div>
+	
+	<!-- ========================================================================= -->
+	
+	<div id="main" sclass="main" style="widht:100%; height:80%;" >
+		
+		  <html>
+	         <h1 style="color:black; text-align:center; margin-top:10px;">Juego N en línea (Triqui)</h1>
+		</html>
+		 
+		<div sclass="main-container">
+			<div id="playersInfo" sclass="players-info">
+				<div id="player1Info" sclass="cards-players pl1">
+				</div>
+				
+				<div id="moves" sclass="card-moves"></div>
+				
+				<div id="player2Info" sclass="cards-players pl2">
+				</div>
+			</div>
+			<div id="board" sclass="board-style">
+	
+			</div>
+		</div>
+	</div>
+</div>

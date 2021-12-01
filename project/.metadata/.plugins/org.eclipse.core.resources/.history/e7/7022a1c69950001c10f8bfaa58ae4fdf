@@ -1,0 +1,19 @@
+package nEnLinea;
+
+import org.zkoss.zul.*;
+import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zul.Label;
+
+public class IndexController extends BaseController{
+
+	
+	@Override
+	public void doAfterCompose(Component comp) throws Exception{
+		super.doAfterCompose(comp);
+	}
+
+	public void onClick$formButton(){
+		Executions.sendRedirect("/");
+	}
+}

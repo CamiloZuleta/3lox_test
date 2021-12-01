@@ -1,0 +1,41 @@
+<?page title="Auto Generated index.zul"?>
+<div  style="widht:100%; height:100%;" apply="nEnLinea.IndexController">
+	<style>
+		.input{
+			width:100%;
+		}
+		.form{
+			width:50%;
+			margin: auto;
+			margin-top:10%;
+		}
+		.form-button{
+			background-color:#393d46;
+			margin: auto;
+		}
+	</style>
+	<html>
+		<h1 style="color:#393d46; text-align:center;">Bienvenido a el juego de N en Línea</h1>
+	</html>
+	<groupbox sclass="form" >
+    <grid >
+        <columns>
+            <column width="50%"/>
+            <column/>
+        </columns>
+        <rows>
+            <row>
+                Nombre Jugador 1 <textbox sclass="input" value="@bind(vm.currentBook.name)"/>
+            </row>
+            <row>
+                Nombre Juagador 2 <textbox sclass="input" value="@bind(vm.currentBook.author)"/>
+            </row>
+            <row>
+                n (número de celdas) <doublebox sclass="input" value="@bind(vm.currentBook.price)" />
+            </row>
+        </rows>
+    </grid>
+	</groupbox>
+	<button id="formButton" sclass="form-button">Jugar</button>
+
+</div>

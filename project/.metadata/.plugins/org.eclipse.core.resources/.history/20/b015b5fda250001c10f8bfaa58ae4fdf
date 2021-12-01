@@ -1,0 +1,6 @@
+package nEnLinea;
+
+public class BoardController extends BaseController{
+	
+
+}

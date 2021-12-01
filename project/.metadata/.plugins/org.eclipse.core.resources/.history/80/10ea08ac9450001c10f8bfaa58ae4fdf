@@ -1,0 +1,23 @@
+<?page title="Auto Generated index.zul"?>
+<div  style="widht:100%; height:100%;" apply="nEnLinea.IndexController">
+	<groupbox >
+    <grid hflex="true" >
+        <columns>
+            <column width="50%"/>
+            <column/>
+        </columns>
+        <rows>
+            <row>
+                Name <textbox value="@bind(vm.currentBook.name)"/>
+            </row>
+            <row>
+                Author <textbox value="@bind(vm.currentBook.author)"/>
+            </row>
+            <row>
+                Price <doublebox value="@bind(vm.currentBook.price)" format="###,##0.00" />
+            </row>
+        </rows>
+    </grid>
+	</groupbox>
+
+</div>

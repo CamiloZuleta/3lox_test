@@ -1,0 +1,10 @@
+package nEnLinea;
+
+import org.zkoss.zk.ui.Component;
+
+public class BoardController extends BaseController{
+	@Override
+	public void doAfterCompose(Component comp) throws Exception{
+		super.doAfterCompose(comp);
+	}
+}

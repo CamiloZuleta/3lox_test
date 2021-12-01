@@ -1,0 +1,29 @@
+package nEnLinea;
+
+import org.zkoss.zul.*;
+import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zul.Label;
+
+public class IndexController extends BaseController{
+	
+	private Textbox namePlayer1;
+	private Textbox namePlayer2;
+	private Intbox numbSqrts;
+	
+	@Override
+	public void doAfterCompose(Component comp) throws Exception{
+		super.doAfterCompose(comp);
+	}
+
+	public void onClick$formButton(){
+		if(namePlayer1.getValue().length()>1 && namePlayer2.getValue().length()>1 && numbSqrts.getValue() >1 && numbSqrts.getValue()<100){
+			Executions.sendRedirect("/gameBoard.zul");
+		}else{
+			alert("parametros invalidos,"
+					+ "los nombre de los jugadores deben tener al menos 2 letras"
+					+"El número de casillas debe ser mayor a uno y menor a 100 ");
+		}
+		
+	}
+}
