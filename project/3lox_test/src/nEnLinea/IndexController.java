@@ -1,5 +1,6 @@
 package nEnLinea;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.zkoss.zul.*;
@@ -7,6 +8,9 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+
+import threeLox.GameDao;
+import Model.GameModel;
 
 public class IndexController extends BaseController{
 	
@@ -34,9 +38,8 @@ public class IndexController extends BaseController{
 			String name1 = namePlayer1.getValue();
 			String name2 = namePlayer2.getValue();
 			int n = numbSqrts.getValue();
-			System.out.println(name1);
-			System.out.println(name2);
-			System.out.println(n);
+
+			saveGame();
 			
 			Label lbl;
 			lbl = new Label();
@@ -142,6 +145,28 @@ public class IndexController extends BaseController{
 			}
 		}
 		return isWinner;
+	}
+	
+	public void saveGame(){
+		GameModel model  = new GameModel(namePlayer1.getValue(),namePlayer2.getValue());
+		
+		int result = 0;
+		try {
+			result = GameDao.getInstance().insertDB(model);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(result == 0){
+			System.out.println("Error");
+		}else{
+			System.out.println("Juego guardado");
+		}
+		
 	}
 
 }
